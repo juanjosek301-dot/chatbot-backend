@@ -8,12 +8,11 @@ API backend del chatbot institucional.
 docker compose up -d --build db backend
 ```
 
-La documentación interactiva de la API está en <http://127.0.0.1:8000/docs> y el esquema OpenAPI en <http://127.0.0.1:8000/openapi.json>.
-
-La raíz `http://127.0.0.1:8000/` no tiene una ruta definida y responde `404 Not Found`; eso no indica que el backend esté apagado.
+La ruta <http://127.0.0.1:8000/> devuelve un mensaje de bienvenida para comprobar que el backend está activo. La documentación interactiva de la API está en <http://127.0.0.1:8000/docs> y el esquema OpenAPI en <http://127.0.0.1:8000/openapi.json>.
 
 Rutas principales:
 
+- `GET /` (bienvenida)
 - `GET /opciones`
 - `GET /ai/verificar_identificacion/{identificacion}`
 - `POST /ai/generate`

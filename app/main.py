@@ -15,6 +15,12 @@ from ai_router import router as ai_router
 models.Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
+
+@app.get("/", tags=["inicio"])
+async def inicio():
+    """Ruta de bienvenida para confirmar que la API está disponible."""
+    return {"mensaje": "Hola mundo. Backend del Chatbot Institucional UdeM funcionando."}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
